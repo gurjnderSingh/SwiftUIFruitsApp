@@ -17,6 +17,7 @@ struct FruitCardView: View {
         ZStack {
             VStack {
                 //Fuit Image
+                Spacer()
                 Image("blueberry")
                     .resizable()
                     .scaledToFit()
@@ -33,9 +34,13 @@ struct FruitCardView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
                     .frame(maxWidth: 350)
                 
+                Spacer()
                 StartButtonView()
+                    .padding(.bottom, 40)
+                    
             }//: VStack
         }//: ZStack
         .onAppear(perform: {
