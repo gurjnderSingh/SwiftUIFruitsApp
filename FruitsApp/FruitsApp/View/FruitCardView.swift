@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct FruitCardView: View {
-
     // MARK: - Properties
+    @State private var isAnimating: Bool = false
     
     // MARK: - Body
     
     var body: some View {
-        
         ZStack {
             VStack {
                 //Fuit Image
@@ -22,14 +21,34 @@ struct FruitCardView: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 6, x: 6, y: 8)
+                    .scaleEffect(isAnimating ? 1.0 : 0.6)
                 //Fruit Text
                 Text("BlueBerry")
-                
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 10, x: 2, y: 2)
                 //Fruit: Headline
+                Text("BlueBerry are sweet, nutritious and wildly popular fruit all over the world")
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 16)
+                    .frame(maxWidth: 350)
+                
+                StartButtonView()
             }//: VStack
         }//: ZStack
+        .onAppear(perform: {
+            withAnimation(.easeOut(duration: 0.5)) {
+                isAnimating = true
+            }
+        })
+        
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .background(LinearGradient(gradient: Gradient(colors: [Color("ColorLimeLight"), Color("ColorLimeDark")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 13)
     }
 }
 
