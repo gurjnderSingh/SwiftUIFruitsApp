@@ -17,16 +17,13 @@ struct StartButtonView: View {
                 Image(systemName: "arrow.right.circle")
                     .imageScale(.large)
             }
-//            .background(.red)
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
             .background(
                 Capsule().strokeBorder(.white, lineWidth: 1.25)
             )
-            
         }
         .accentColor(.white)
-
     }
 }
 
