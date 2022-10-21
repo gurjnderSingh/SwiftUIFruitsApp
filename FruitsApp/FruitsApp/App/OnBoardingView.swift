@@ -14,13 +14,33 @@ struct OnBoardingView: View {
     //MARK: -  BODY
     
     var body: some View {
-        TabView {
-            ForEach(fruits[0...5]) { item in
-                FruitCardView(fruit: item)
-            }//: LOOP
-        }//: TAB
-        .tabViewStyle(PageTabViewStyle())
-//        .padding(.vertical, 20)
+
+            TabView {
+                ForEach(fruits[0...5]) { item in
+                    FruitCardView(fruit: item)
+                }//: LOOP
+            }//: TAB
+            .tabViewStyle(PageTabViewStyle())
+            .padding(.vertical, 20)
+//        NavigationStack {
+//            List(fruits) { product in
+//                NavigationLink(product.description) {
+//                    FruitCardView(fruit: product)
+//                }
+//            }
+//            .navigationTitle("Fruits")
+//            .accentColor(.white)
+//        }
+//        .accentColor(.white)
+    }
+}
+
+struct ProductDetailView: View {
+    let fruit: Fruit
+    var body: some View {
+        Text(fruit.title)
+            .font(.title)
+            .navigationTitle(fruit.title)
     }
 }
 
