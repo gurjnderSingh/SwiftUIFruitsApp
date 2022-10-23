@@ -18,7 +18,7 @@ struct FruitCardView: View {
         ZStack {
             VStack {
                 //Fuit Image
-                Spacer()
+//                Spacer()
                 Image(fruit.image)
                     .resizable()
                     .scaledToFit()
@@ -60,7 +60,7 @@ struct FruitCardView: View {
 
 struct FruitCardView_Previews: PreviewProvider {
     static var previews: some View {
-        FruitCardView(fruit: fruitData[4])
+        FruitCardView(fruit: fruitData[0])
             .previewLayout(.fixed(width: 320, height: 640))
     }
 }

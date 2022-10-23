@@ -32,6 +32,8 @@ struct StartButtonView: View {
 
 struct StartButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        StartButtonView().previewLayout(.sizeThatFits)
+        StartButtonView()
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
     }
 }
