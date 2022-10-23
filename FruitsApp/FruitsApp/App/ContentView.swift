@@ -17,8 +17,10 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(fruits) { fruit in
-                    FruitRowView(fruit: fruit)
-                        .padding(.vertical, 4)
+                    NavigationLink(destination: FruitDetailView()) {
+                        FruitRowView(fruit: fruit)
+                            .padding(.vertical, 4)
+                    }
                 }
             }
             .navigationTitle("Fruit")
