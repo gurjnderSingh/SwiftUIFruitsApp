@@ -23,7 +23,7 @@ struct FruitHeaderView: View {
                 .padding(.vertical, 20)
                 .scaleEffect(isAnimating ? 1.0 : 0.6)
         }//: ZSTACK
-        .frame(height: 440)
+        .frame(height: 340)
         .onAppear {
             withAnimation(.easeOut(duration: 0.6)) {
                 isAnimating = true
