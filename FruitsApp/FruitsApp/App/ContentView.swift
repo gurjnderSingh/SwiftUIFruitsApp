@@ -23,7 +23,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Fruit")
+            .navigationBarTitle("Fruit", displayMode: .large)
             .navigationBarItems(trailing:
                                     Button(action: {
                 isShowingSetting = true
@@ -35,6 +35,7 @@ struct ContentView: View {
                 SettingsView()
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 
